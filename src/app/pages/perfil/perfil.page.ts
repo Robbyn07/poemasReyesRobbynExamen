@@ -7,21 +7,19 @@ import { trace } from '@angular/fire/performance';
 import { Inject } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-perfil',
+  templateUrl: './perfil.page.html',
+  styleUrls: ['./perfil.page.scss'],
 })
-export class LoginPage implements OnInit, OnDestroy {
+export class PerfilPage implements OnInit {
 
   private readonly userDisposable: Subscription|undefined;
 
   showLoginButton = false;
   showLogoutButton = false;
 
-  constructor(public readonly auth: AngularFireAuth, @Inject(PLATFORM_ID) platformId: object, private router: Router) {
-
+  constructor(public readonly auth: AngularFireAuth, @Inject(PLATFORM_ID) platformId: object, private router: Router) { 
     if (!isPlatformServer(platformId)) {
       this.userDisposable = this.auth.authState.pipe(
         trace('auth'),
@@ -33,7 +31,8 @@ export class LoginPage implements OnInit, OnDestroy {
     }
   }
 
-  ngOnInit(): void { }
+  ngOnInit() {
+  }
 
   ngOnDestroy(): void {
     if (this.userDisposable) {
@@ -41,16 +40,8 @@ export class LoginPage implements OnInit, OnDestroy {
     }
   }
 
-  async login() {
-    const user = await this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    console.log(user)
-    this.router.navigate(['perfil']);
-    // TODO sign into offline app
-  }
-
-  async loginAnonymously() {
-    const user = await this.auth.signInAnonymously();
-    // TODO sign into offline app
+  moverPoema(){
+    this.router.navigate(['create-poems']);
   }
 
   logout() {
@@ -58,4 +49,5 @@ export class LoginPage implements OnInit, OnDestroy {
     this.router.navigate(['login']);
     // TODO sign out of offline app
   }
+
 }

@@ -33,6 +33,6 @@ export class CreatePoemsPage implements OnInit {
   guardarPoema(){
     console.log(this.poema);
     this.poemaService.save(this.poema);
-    //this.router.navigate(['']);
+    this.router.navigate(['perfil']);
   }
 }

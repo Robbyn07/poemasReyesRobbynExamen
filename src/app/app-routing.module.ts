@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'create-poems',
     loadChildren: () => import('./pages/create-poems/create-poems.module').then( m => m.CreatePoemsPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 ];
 

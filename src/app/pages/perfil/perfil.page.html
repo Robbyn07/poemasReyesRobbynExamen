@@ -4,12 +4,12 @@
             <ion-menu-button>
             </ion-menu-button>
         </ion-buttons>
-        <ion-title>Inicio de Sesion</ion-title>
+        <ion-title>Perfil</ion-title>
     </ion-toolbar>
 </ion-header>
-
 <ion-content>
     <ion-item>
-        <ion-button (click)="login()" *ngIf="showLoginButton">Iniciar Sesion con Google</ion-button>
+        <ion-button (click)="moverPoema()">Crear Poema Post</ion-button>
+        <ion-button (click)="logout()" *ngIf="showLogoutButton">Cerrar Sesion</ion-button>
     </ion-item>
 </ion-content>
