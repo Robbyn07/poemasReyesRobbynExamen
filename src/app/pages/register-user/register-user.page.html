@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>Formulario de Registro</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="fixed">Nombre: </ion-label>
+        <ion-input [(ngModel)]="usuario.nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="fixed">Nick: </ion-label>
+        <ion-input [(ngModel)]="usuario.nick"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="fixed">Correo: </ion-label>
+        <ion-input [(ngModel)]="usuario.correo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="fixed">Contraseña: </ion-label>
+        <ion-input [(ngModel)]="usuario.contra"></ion-input>
+    </ion-item>
+
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button (click)="guardarTotal()">
+            <ion-icon name="checkmark-outline"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

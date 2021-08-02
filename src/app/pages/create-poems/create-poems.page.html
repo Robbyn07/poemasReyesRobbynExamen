@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button>
+            </ion-menu-button>
+        </ion-buttons>
+        <ion-title>Publicar Poema</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="fixed">Autor: </ion-label>
+        <ion-input [(ngModel)]="poema.autor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="fixed">Titulo: </ion-label>
+        <ion-input [(ngModel)]="poema.titulo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="fixed">Texto: </ion-label>
+        <ion-input [(ngModel)]="poema.texto_poema"></ion-input>
+    </ion-item>
+
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button (click)="guardarPoema()">
+            <ion-icon name="checkmark-outline"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>
